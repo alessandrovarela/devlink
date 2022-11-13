@@ -1,14 +1,29 @@
 import { useState } from 'react'
 import './login.css'
-import {Logo} from '../../components/Logo'
+import { Logo } from '../../components/Logo'
+import { auth } from '../../services/firebaseConnection'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login(){
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handLogin(e){
     e.preventDefault();
-    alert("TESTE")
+    if (email === '' || password === ''){
+      alert("preencha todos os campos!")
+      return;
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then( () => { 
+        navigate("/admin", { replace: true })
+    })
+    .catch( () => { 
+        console.log("ERRO AO FAZER SEU LOGIN")
+    })
   }
 
   return(
