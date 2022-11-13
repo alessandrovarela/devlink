@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import './login.css'
 import { Logo } from '../../components/Logo'
+
 import { auth } from '../../services/firebaseConnection'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+
+import { toast } from 'react-toastify' 
 
 export default function Login(){
   const [email, setEmail] = useState("");
@@ -19,10 +22,11 @@ export default function Login(){
 
     signInWithEmailAndPassword(auth, email, password)
     .then( () => { 
+        toast.success("Bem vindo de volta :)")
         navigate("/admin", { replace: true })
     })
     .catch( () => { 
-        console.log("ERRO AO FAZER SEU LOGIN")
+        toast.error("Usuário e/ou senha inválidos!")
     })
   }
 
