@@ -30,6 +30,14 @@ export default function Home(){
             <FaFacebook size={35} color="#FFF" />
           </Social>
 
+          <Social url="https://youtube.com">
+            <FaYoutube size={35} color="#FFF" />
+          </Social>
+
+          <Social url="https://instagram/alessandrovarela">
+            <FaInstagram size={35} color="#FFF" />
+          </Social>
+
         </footer>
       </main>
     </div>
