@@ -51,6 +51,17 @@
   padding: 14px 8px;
 }
 
+.preview{
+  margin: 0 0 28px 0;
+  padding: 4px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .btn-delete{
   border: 1.5px dashed #FFF;
   color: #FFF;
@@ -73,5 +84,20 @@
   100%{
     opacity: 1;
     transform: scale(1,1);
+  }
+}
+
+.animate-fade{
+  animation-duration: 1s;
+  animation-name: animate-fade;
+}
+
+@keyframes animate-fade {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
   }
 }
