@@ -9,7 +9,7 @@ export default function Private({ children }){
   const [loading, setLoading] = useState(true)
   const [signed, setSigned] = useState(false)
 
-  useEffect( () => {
+  useEffect(() => {
 
     async function checkLogin(){
 
@@ -29,7 +29,7 @@ export default function Private({ children }){
           setSigned(false);
         }
 
-      } )
+      })
 
     }
 
