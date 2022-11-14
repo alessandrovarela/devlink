@@ -26,6 +26,7 @@ export default function Private({ children }){
           setSigned(true);
         } else {
           setLoading(false);
+          setSigned(false);
         }
 
       } )
