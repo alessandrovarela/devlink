@@ -13,7 +13,7 @@ export default function Private({ children }){
 
     async function checkLogin(){
 
-      const unsub = onAuthStateChanged( auth, (user) => {
+    onAuthStateChanged( auth, (user) => {
 
         if (user){
           const userData = {

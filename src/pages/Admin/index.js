@@ -4,7 +4,7 @@ import { Header } from '../../components/Header'
 import { Logo } from '../../components/Logo'
 import { Input } from '../../components/Input'
 
-import { MdAddLink, MdListAlt } from 'react-icons/md'
+import { MdAddLink } from 'react-icons/md'
 import { FiTrash2 } from 'react-icons/fi'
 import { toast } from 'react-toastify'
 
@@ -33,7 +33,7 @@ export default function Admin() {
     const linksRef = collection( db, "links")
     const queryRef = query(linksRef, orderBy("created", "asc"))
 
-    const unsub = onSnapshot(queryRef, (snapshot) => {
+    onSnapshot(queryRef, (snapshot) => {
       let lista = [];
 
       snapshot.forEach((doc)=>{
